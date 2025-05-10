@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "auths",
+  "info": {
+    "singularName": "auth",
+    "pluralName": "auths",
+    "displayName": "Auth",
+    "description": "Custom authentication endpoint"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "dummy": {
+      "type": "string"
+    }
+  }
+}
