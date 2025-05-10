@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "applications",
+  "info": {
+    "singularName": "application",
+    "pluralName": "applications",
+    "displayName": "Application"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "candidate": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "applications"
+    },
+    "job": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::job.job",
+      "inversedBy": "applications"
+    },
+    "cover_letter": {
+      "type": "string"
+    },
+    "app_status": {
+      "type": "enumeration",
+      "enum": [
+        "Submitted",
+        "Under Review",
+        "Accepted",
+        "Rejected"
+      ],
+      "default": "Submitted",
+      "required": true
+    }
+  }
+}

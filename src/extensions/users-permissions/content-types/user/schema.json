@@ -73,6 +73,12 @@
       "relation": "oneToMany",
       "target": "api::job.job",
       "mappedBy": "employer"
+    },
+    "applications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::application.application",
+      "mappedBy": "candidate"
     }
   }
 }
