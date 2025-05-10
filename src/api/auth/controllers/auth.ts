@@ -2,9 +2,6 @@ console.log('🚀 Loading custom auth controller for Users & Permissions');
 
 module.exports = {
   async register(ctx) {
-    console.log('🚀 Custom register controller called!');
-    console.log('🚀 Request body:', ctx.request.body);
-
     const { username, email, password, profile, role } = ctx.request.body;
 
     if (!username || !email || !password) {
@@ -45,7 +42,6 @@ module.exports = {
         .query('plugin::users-permissions.role')
         .findOne({ where: { type: roleType } });
 
-      console.log('🚀 User role:', userRole);
       if (!userRole) {
         return ctx.badRequest(`Role "${roleType}" not found`);
       }
@@ -86,7 +82,7 @@ module.exports = {
         user: sanitizedUser,
       };
     } catch (error) {
-      console.error('🚀 Registration error:', error);
+      console.log('🚀 Registration error:', error);
       ctx.badRequest(error.message || 'An error occurred during registration');
     }
   },

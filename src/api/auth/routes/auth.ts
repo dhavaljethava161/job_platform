@@ -1,4 +1,3 @@
-// src/api/auth/routes/auth.ts
 export default {
   routes: [
     {
